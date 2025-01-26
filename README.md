@@ -1,12 +1,26 @@
 # eleventy-esm-bug-state
-Snapshot of an eleventy website with an ESM bug. Snapshot is of a website built following the [Learn Eleventy](https://learn-eleventy.pages.dev/) tutorial up to [Lesson 8](https://learn-eleventy.pages.dev/lesson/8/).
+Snapshot of an eleventy website with what seems to be an ESM import bug. Snapshot is of a website built following the [Learn Eleventy](https://learn-eleventy.pages.dev/) tutorial up to [Lesson 8](https://learn-eleventy.pages.dev/lesson/8/).
+
+
+If you remove the line:
+
+```
+type: module
+```
+
+from `package.json` and convert all `import`/`export` statements to use `commonjs` syntax, the website works fine when running `npm start`—so it seems this is a bug with how Eleventy handles ESM, unless I'm missing something super simple.
 
 
 ### Node versions
 Same results with node versions `20.17`, `22.13.1`, `23.6.0`.
 (managed with `nvm`).
 
-### Error messages
+### Errors
+
+Reproduce by simply running `npm start`.
+
+You should see the following error message:
+
 ```
 [11ty] Eleventy Error (CLI):
 [11ty] 1. Error in your Eleventy config file '.eleventy.js'. You may need to run `npm install`. (via EleventyConfigError)
@@ -46,4 +60,3 @@ If you change your import to the one recommended with "Did you mean to import" (
 [11ty]     at handleMessage (node:internal/modules/esm/worker:196:24)
 [11ty]     at Immediate.checkForMessages (node:internal/modules/esm/worker:138:28)
 
-```
