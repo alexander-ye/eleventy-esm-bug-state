@@ -1,0 +1,26 @@
+<!-- 
+Pull content from cta.json by setting ctaPrefix as cta using the Nunjucks set feature,
+which lets us create variables. If you have used Liquid before, this is the equivalent of assign
+-->
+{% set ctaPrefix = cta %}
+
+<!-- 
+override that content on a per-instance basis;
+check to see if ctaContent is defined. 
+If it is: we override the ctaPrefix with that variable. 
+-->
+{% if ctaContent %} 
+  {% set ctaPrefix = ctaContent %}
+{% endif %}
+
+<article class="[ cta ] [ dot-shadow panel ] [ bg-dark-shade color-light ]">
+  <div class="wrapper">
+    <div class="[ cta__inner ] [ flow ]">
+      <h2 class="[ cta__heading ] [ headline ]" data-highlight="quaternary">{{ ctaPrefix.title }}</h2>
+      <p class="[ cta__summary ] [ measure-short ]">{{ ctaPrefix.summary }}</p>
+      <div class="cta__action">
+        <a class="button" data-variant="ghost" href="{{ ctaPrefix.buttonUrl }}">{{ ctaPrefix.buttonText }}</a>
+      </div>
+    </div>
+  </div>
+</article>

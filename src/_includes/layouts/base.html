@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    {% include "partials/site-head.html" %}
+    <!-- https://www.w3.org/WAI/ARIA/apg/
+      <main> is a type of landmark or sectioning element. 
+      It's good practice to use semantic HTML elements wherever possible, so that 
+      people using assistive technologies can navigate your site more easily. 
+    -->
+    <main tabindex="-1" id="main-content">
+      {% block content %}
+      <p>
+        Here is some placeholder content that will render if a template doesn’t
+        define a block.
+      </p>
+      {% endblock %}
+    </main>
+  </body>
+</html>

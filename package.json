@@ -1,0 +1,17 @@
+{
+  "name": "eleventy-from-scratch",
+  "version": "1.0.0",
+  "main": ".eleventy.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx eleventy --serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
