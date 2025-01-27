@@ -1,6 +1,6 @@
 // https://www.11ty.dev/docs/config/
 
-import { byDisplayOrder } from '../src/utils/sort-by-display-order.js';
+import { byDisplayOrder } from './src/utils/sort-by-display-order.js';
 
 // Responsible for final output
 export default async function (eleventyConfig) {
