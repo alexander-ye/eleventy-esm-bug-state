@@ -1,11 +1,10 @@
 /**
- * Takes a collection and returns it back in display order
+ * Sorting function for 2 collections
  *
- * @param {Array} collection The 11ty collection
- * @returns {Array} the sorted collection
+ * @param {a} collection 11ty collection
+ * @param {b} collection 11ty collection
+ * @returns {void} sorts in place
  */
-export function byDisplayOrder(collection) {
-  collection.sort((a, b) =>
-    Number(a.data.displayOrder) > Number(b.data.displayOrder) ? 1 : -1
-  );
+export function byDisplayOrder(a, b) {
+  return Number(a.data.displayOrder) > Number(b.data.displayOrder) ? 1 : -1;
 }
